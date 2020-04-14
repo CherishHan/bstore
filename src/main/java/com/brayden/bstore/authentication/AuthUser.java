@@ -1,6 +1,6 @@
 package com.brayden.bstore.authentication;
 
-import org.springframework.security.core.Authentication;
+import com.brayden.bstore.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,16 +8,14 @@ import java.util.Collection;
 
 public class AuthUser implements UserDetails {
 
-    private String username;
+    private User user;
 
-    private String password;
-
-    public void setUsername(String username) {
-        this.username = username;
+    public User getUser() {
+        return user;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -27,12 +25,12 @@ public class AuthUser implements UserDetails {
 
     @Override
     public String getPassword() {
-        return password;
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return username;
+        return user.getPhone();
     }
 
     @Override

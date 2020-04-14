@@ -52,4 +52,6 @@ public interface UserMapper {
      * @mbg.generated Sun Apr 12 22:25:49 CST 2020
      */
     int updateByPrimaryKey(User record);
+
+    User getUserByPhone(String phone);
 }

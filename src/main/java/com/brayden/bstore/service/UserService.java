@@ -6,4 +6,6 @@ import com.brayden.bstore.entity.User;
 public interface UserService {
 
     ResponseData register(User user);
+
+    User getUserByName(String phone);
 }

@@ -28,4 +28,9 @@ public class UserServiceImpl implements UserService {
         int insert = userMapper.insert(user);
         return new ResponseData(20000, "Success", "register");
     }
+
+    @Override
+    public User getUserByName(String phone) {
+        return userMapper.getUserByPhone(phone);
+    }
 }
