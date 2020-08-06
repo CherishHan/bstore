@@ -1,6 +1,6 @@
 package com.brayden.bstore.authentication;
 
-import com.brayden.bstore.entity.User;
+import com.brayden.bstore.entity.Account;
 import com.brayden.bstore.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +23,9 @@ public class AccountDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        User user = userService.getUserByName(s);
+        Account user = userService.getUserByName(s);
         if(StringUtils.isEmpty(user)){
-            throw new UsernameNotFoundException(format("User %s not found!", s));
+            throw new UsernameNotFoundException(format("Account %s not found!", s));
         }
         logger.info("user: {}, password: {}", user.getName(), user.getPassword());
         AuthUser authUser = new AuthUser();

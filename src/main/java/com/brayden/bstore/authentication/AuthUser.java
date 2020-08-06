@@ -1,6 +1,6 @@
 package com.brayden.bstore.authentication;
 
-import com.brayden.bstore.entity.User;
+import com.brayden.bstore.entity.Account;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,13 +8,13 @@ import java.util.Collection;
 
 public class AuthUser implements UserDetails {
 
-    private User user;
+    private Account user;
 
-    public User getUser() {
+    public Account getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Account user) {
         this.user = user;
     }
 
