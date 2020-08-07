@@ -1,11 +1,11 @@
 package com.brayden.bstore.service;
 
 import com.brayden.bstore.entity.ResponseData;
-import com.brayden.bstore.entity.Account;
+import com.brayden.bstore.entity.User;
 
 public interface UserService {
 
-    ResponseData register(Account user);
+    ResponseData register(User user);
 
-    Account getUserByName(String phone);
+    User getUserByName(String phone);
 }

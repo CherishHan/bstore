@@ -1,6 +1,6 @@
 package com.brayden.bstore.service.impl;
 
-import com.brayden.bstore.entity.Account;
+import com.brayden.bstore.entity.User;
 import com.brayden.bstore.entity.ResponseData;
 import com.brayden.bstore.mapper.UserMapper;
 import com.brayden.bstore.service.UserService;
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public ResponseData register(Account user) {
+    public ResponseData register(User user) {
         user.setUuid(UUID.randomUUID().toString());
         user.setCreatedTime(new Date());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Account getUserByName(String phone) {
+    public User getUserByName(String phone) {
         return userMapper.getUserByPhone(phone);
     }
 }

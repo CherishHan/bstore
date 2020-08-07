@@ -2,7 +2,7 @@ package com.brayden.bstore.controller;
 
 import com.brayden.bstore.entity.Buser;
 import com.brayden.bstore.entity.ResponseData;
-import com.brayden.bstore.entity.Account;
+import com.brayden.bstore.entity.User;
 import com.brayden.bstore.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseData register(@RequestBody Account user){
+    public ResponseData register(@RequestBody User user){
         logger.info("name: {}, pass: {}, phone: {}", user.getName(), user.getPassword(), user.getPhone());
         return userService.register(user);
     }
